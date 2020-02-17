@@ -13,4 +13,8 @@ public class UserValidator {
     public boolean validateLastName(String lastName) {
         return lastName.matches(LAST_NAME_REGEX);
     }
+    String EMAILID_REGEX="^[a-zA-Z]+[0-9._%+-]*@[a-zA-Z0-9.]+[.][a-zA-Z]{2,4}$";
+    public boolean validateEmailID(String emailID) {
+        return emailID.matches(EMAILID_REGEX);
+    }
 }
