@@ -17,4 +17,8 @@ public class UserValidator {
     public boolean validateEmailID(String emailID) {
         return emailID.matches(EMAILID_REGEX);
     }
+    String MOBILE_NUMBER_REGEX="^[0-9]{2}[ ][0-9]{10}$";
+    public boolean validateMobileNUmber(String mobileNumber) {
+        return mobileNumber.matches(MOBILE_NUMBER_REGEX);
+    }
 }
