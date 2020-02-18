@@ -89,4 +89,16 @@ public class UserRegistration {
         boolean result=validator.validatePassword2("Sampada%");
         Assert.assertFalse(result);
     }
+    @Test
+    public void givenPassword_ExactlyOneSpecialCharacter_WhenProper_ShouldReturnTrue(){
+        UserValidator validator=new UserValidator();
+        boolean result=validator.validatePassword3("Sam12prabhu%");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenPassword_ExactlyOneSpecialCharacter_WhenNotProper_ShouldReturnFalse(){
+        UserValidator validator=new UserValidator();
+        boolean result=validator.validatePassword3("Sam123%#");
+        Assert.assertEquals(false,result);
+    }
 }
