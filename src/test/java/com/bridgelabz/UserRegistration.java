@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class UserRegistration {
+
     @Test
    public void givenFirstName_WhenProper_ShouldReturnTrue() {
        UserValidator validator=new UserValidator();
@@ -63,5 +64,17 @@ public class UserRegistration {
        UserValidator validator = new UserValidator();
        boolean result = validator.validateMobileNumber("SAm%12");
        Assert.assertEquals(false, result);
+   }
+   @Test
+    public void givenPassword_AtLeastOneUpperCaseLetter_WhenProper_ShouldReturnTrue(){
+        UserValidator validator=new UserValidator();
+        boolean result=validator.validatePassword1("Sampada12%");
+        Assert.assertTrue(result);
+   }
+   @Test
+    public void givenPassword_AtLeastOneUpperCaseLetter_WhenNotProper_ShouldReturnFalse(){
+        UserValidator validator=new UserValidator();
+        boolean result=validator.validatePassword1("sam%");
+        Assert.assertFalse(result);
    }
 }
