@@ -6,6 +6,7 @@ public class UserValidator {
     }
     String FIRST_NAME_REGEX="^[A-Z]{1}[A-Za-z]{2,}$";
     public boolean validateFirstName(String firstName) {
+
         return firstName.matches(FIRST_NAME_REGEX);
     }
 
@@ -13,12 +14,21 @@ public class UserValidator {
     public boolean validateLastName(String lastName) {
         return lastName.matches(LAST_NAME_REGEX);
     }
+
     String EMAILID_REGEX="^[a-zA-Z]+[0-9._%+-]*@[a-zA-Z0-9.]+[.][a-zA-Z]{2,4}$";
     public boolean validateEmailID(String emailID) {
+
         return emailID.matches(EMAILID_REGEX);
     }
-    String MOBILE_NUMBER_REGEX="^[0-9]{2}[ ][0-9]{10}$";
-    public boolean validateMobileNUmber(String mobileNumber) {
+
+    String MOBILE_NUMBER_REGEX="^[0-9]{2}[ ][1-9]{1}[0-9]{9}$";
+    public boolean validateMobileNumber(String mobileNumber) {
+
         return mobileNumber.matches(MOBILE_NUMBER_REGEX);
+    }
+
+    String PASSWORD_REGEX="^[A-Za-z0-9@#%+-_]{8,}$";
+    public boolean validatePassword(String password) {
+        return password.matches(PASSWORD_REGEX);
     }
 }

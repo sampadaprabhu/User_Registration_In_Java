@@ -43,13 +43,25 @@ public class UserRegistration {
    @Test
     public void givenMobileNumber_WhenProper_ShouldReturnTrue(){
         UserValidator validator=new UserValidator();
-        boolean result=validator.validateMobileNUmber("91 1234567890");
+        boolean result=validator.validateMobileNumber("91 1234567890");
         Assert.assertEquals(true,result);
    }
    @Test
     public void givenMobileNumber_WhenNotProper_ShouldReturnFalse(){
         UserValidator validator=new UserValidator();
-        boolean result=validator.validateMobileNUmber("1234567890");
+        boolean result=validator.validateMobileNumber("1234567890");
         Assert.assertEquals(false,result);
+   }
+   @Test
+    public void givenPassword_WhenProper_ShouldReturnTrue(){
+        UserValidator validator=new UserValidator();
+        boolean result=validator.validatePassword("samPada#123");
+        Assert.assertEquals(true,result);
+   }
+   @Test
+    public void givenPassword_WhenNotProper_ShouldReturnFalse() {
+       UserValidator validator = new UserValidator();
+       boolean result = validator.validateMobileNumber("SAm%12");
+       Assert.assertEquals(false, result);
    }
 }
