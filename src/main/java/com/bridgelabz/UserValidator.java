@@ -44,4 +44,10 @@ public class UserValidator {
     public boolean validatePassword3(String password3) {
         return password3.matches(PASSWORD3_REGEX);
     }
+    //Checking Email Samples Using Collection
+    private static final String ALL_EMAIL_REGEX ="^\\w{3,}([-._+]\\w+)?@\\w+.[a-z]{2,4}([.][a-z]{2,4})?$";
+    public boolean testAllEmail(String allEmail){
+        return allEmail.matches(ALL_EMAIL_REGEX);
+    }
+
 }
