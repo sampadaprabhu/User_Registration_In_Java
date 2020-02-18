@@ -35,4 +35,8 @@ public class UserValidator {
     public boolean validatePassword1(String password1) {
         return password1.matches(PASSWORD1_REGEX);
     }
+    private static final String PASSWORD2_REGEX ="^((?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9+-_%#].{8,})$";
+    public boolean validatePassword2(String password2) {
+        return password2.matches(PASSWORD2_REGEX);
+    }
 }

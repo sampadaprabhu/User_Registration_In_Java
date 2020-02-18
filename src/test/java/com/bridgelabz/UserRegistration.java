@@ -77,4 +77,16 @@ public class UserRegistration {
         boolean result=validator.validatePassword1("sam%");
         Assert.assertFalse(result);
    }
+    @Test
+    public void givenPassword_AtLeastOneNumericNumber_whenProper_ShouldReturnTrue(){
+        UserValidator validator=new UserValidator();
+        boolean result=validator.validatePassword2("Sampada12+");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenPassword_AtLeastOneNumericNumber_WhenNotProper_ShouldReturnFalse(){
+        UserValidator validator=new UserValidator();
+        boolean result=validator.validatePassword2("Sampada%");
+        Assert.assertFalse(result);
+    }
 }
