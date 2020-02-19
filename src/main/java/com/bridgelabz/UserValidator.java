@@ -40,7 +40,7 @@ public class UserValidator {
         return password2.matches(PASSWORD2_REGEX);
     }
 
-    private static final String PASSWORD3_REGEX ="((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.[@#$%!]{1}).{8,})";
+    private static final String PASSWORD3_REGEX ="^((?=[^\\W\\_]*[\\W\\_][^\\W\\_]*$)(?=.*[A-Z])(?=.*[\\d])[A-Za-z\\d\\W\\_]{8,})$";
     public boolean validatePassword3(String password3) {
         return password3.matches(PASSWORD3_REGEX);
     }
